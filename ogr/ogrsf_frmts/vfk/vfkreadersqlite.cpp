@@ -31,7 +31,8 @@ VFKReaderSQLite::VFKReaderSQLite(const GDALOpenInfo *poOpenInfo)
       // True - build geometry from DB
       // False - store also geometry in DB
       m_bSpatial(CPLTestBool(CPLGetConfigOption("OGR_VFK_DB_SPATIAL", "YES"))),
-      m_bBudMulti(CPLTestBool(CPLGetConfigOption("OGR_VFK_DB_BUD_MULTI", "NO"))),
+      m_bBudMulti(
+          CPLTestBool(CPLGetConfigOption("OGR_VFK_DB_BUD_MULTI", "NO"))),
       m_bNewDb(false), m_bDbSource(false)
 {
     size_t nLen = 0;
